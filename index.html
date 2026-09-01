@@ -1,159 +1,276 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Meri Website</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f5f7fa;
-            color: #222;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h2 {
-            color: #38bdf8;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            background: #38bdf8;
-            color: #111827;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background: white;
-        }
-
-        .about {
-            padding: 70px 10%;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.8;
-            font-size: 18px;
-        }
-
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 35px;
-            }
-
-            nav a {
-                margin: 5px;
-            }
-        }
-    </style>
+    <title>AIHub - All Your AI Tools in One Place</title>
+    <meta name="description" content="Discover powerful AI tools for writing, coding, image generation, and productivity.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav class="navbar sticky" id="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <a href="#home">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">AIHub</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tools">AI Tools</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="navbar-actions">
+                    <div class="search-bar-small" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <a href="#login" class="btn-text">Login</a>
+                    <a href="#signup" class="btn-primary">Get Started</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <header>
-        <h2>My Website</h2>
-
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
-
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Assalam-o-Alaikum 👋</h1>
-
-        <p>
-            Welcome to my first website!
-        </p>
-
-        <a href="#about" class="button">
-            Mere Bare Mein
-        </a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Powerful AI Tools. <span class="gradient-text">One Simple Platform.</span></h1>
+                <p class="hero-subtitle">Write, create, code, learn and automate with powerful AI tools designed for everyone.</p>
+                <div class="hero-search">
+                    <input type="text" id="heroSearch" placeholder="Search AI tools..." class="search-input">
+                    <button onclick="searchTools()" class="btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#tools" class="btn-primary">Explore AI Tools</a>
+                    <a href="#signup" class="btn-secondary">Get Started Free</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">✍️</div>
+                    <div class="card-text">AI Writing</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-text">Image Gen</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">Code Gen</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="about" id="about">
-        <h2>Mere Bare Mein</h2>
-
-        <p>
-            Assalam-o-Alaikum! Mera naam Yahan Apna Naam Likhein hai.
-            Ye meri personal website hai. Yahan aap apne bare mein,
-            apne skills aur apne projects ke bare mein information de sakte hain.
-        </p>
+    <!-- Featured Tools Section -->
+    <section class="section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured AI Tools</h2>
+                <p>Discover our most popular AI tools</p>
+            </div>
+            <div class="tools-grid" id="featuredTools">
+                <!-- Tools will be loaded here -->
+            </div>
+            <div class="section-footer">
+                <a href="pages/tools.html" class="btn-primary">View All Tools →</a>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2026 My Website. All Rights Reserved.</p>
+    <!-- Categories Section -->
+    <section class="section bg-alt" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Categories</h2>
+                <p>Find AI tools by category</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be loaded here -->
+            </div>
+            <div class="section-footer">
+                <a href="pages/categories.html" class="btn-primary">View All Categories →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles Section -->
+    <section class="section" id="articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest AI Articles</h2>
+                <p>Learn about AI trends, tools, and best practices</p>
+            </div>
+            <div class="articles-grid" id="latestArticles">
+                <!-- Articles will be loaded here -->
+            </div>
+            <div class="section-footer">
+                <a href="pages/articles.html" class="btn-primary">Read All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section bg-alt" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Pricing</h2>
+                <p>Choose the plan that fits your needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <p class="price">$0</p>
+                    <ul class="features">
+                        <li>✓ 20 AI generations/month</li>
+                        <li>✓ Basic tools</li>
+                        <li>✓ Standard processing</li>
+                        <li>✗ Priority support</li>
+                    </ul>
+                    <button class="btn-secondary">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <p class="price">$9/mo</p>
+                    <ul class="features">
+                        <li>✓ 1,000 AI generations/month</li>
+                        <li>✓ Premium tools</li>
+                        <li>✓ Faster processing</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <button class="btn-primary">Start Pro Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Business</h3>
+                    <p class="price">$29/mo</p>
+                    <ul class="features">
+                        <li>✓ 5,000 AI generations/month</li>
+                        <li>✓ All premium tools</li>
+                        <li>✓ Team features</li>
+                        <li>✓ Dedicated support</li>
+                    </ul>
+                    <button class="btn-secondary">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About AIHub</h2>
+                <p>Making AI accessible to everyone</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Choose AIHub?</h3>
+                    <p>AIHub is a comprehensive platform designed to make powerful AI tools accessible to everyone. Whether you're a student, professional, or entrepreneur, our collection of AI tools helps you work smarter and faster.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>50+ AI Tools</h4>
+                                <p>Curated collection of the best AI tools</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Lightning Fast</h4>
+                                <p>Get results in seconds</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure & Private</h4>
+                                <p>Your data is protected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section bg-alt" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="handleContactSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AIHub</h4>
+                    <p>All Your AI Tools in One Place</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Product</h5>
+                    <ul>
+                        <li><a href="#tools">AI Tools</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AIHub. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
