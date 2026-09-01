@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Hub - All Your AI Tools in One Place</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i> AI Tools Hub
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#how-it-works" class="nav-link">How it Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="auth/login.html" class="btn-login">Login</a>
+                <a href="auth/signup.html" class="btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">All Your AI Tools in One Place</h1>
+            <p class="hero-subtitle">Power up your workflow with cutting-edge AI technology</p>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="What do you want to create?"
+                        onkeyup="searchTools()"
+                    >
+                </div>
+                <button class="btn-primary" onclick="redirectToTools()">Explore Now</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>AI Tools</p>
+                </div>
+                <div class="stat">
+                    <h3>100K+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat">
+                    <h3>99.9%</h3>
+                    <p>Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tools -->
+    <section class="popular-tools">
+        <div class="container">
+            <h2>Popular AI Tools</h2>
+            <div class="tools-grid" id="popularToolsGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="tools">
+        <div class="container">
+            <h2>AI Tools by Category</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose a Tool</h3>
+                    <p>Browse our extensive collection of AI-powered tools</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Enter Your Input</h3>
+                    <p>Provide the content or details you want to enhance</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Results</h3>
+                    <p>Instantly receive AI-generated output in seconds</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Save & Share</h3>
+                    <p>Download, copy, or share your results anywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"AI Tools Hub has transformed how I work. It's incredibly efficient!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="User">
+                        <div>
+                            <h4>Sarah Anderson</h4>
+                            <p>Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The best AI platform I've used. Saves me hours every week!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=2" alt="User">
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Absolutely amazing! Great features and excellent customer support."</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="User">
+                        <div>
+                            <h4>Emma Williams</h4>
+                            <p>Marketer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> 10 AI generations/day</li>
+                        <li><i class="fas fa-check"></i> Basic tools</li>
+                        <li><i class="fas fa-check"></i> Community support</li>
+                        <li><i class="fas fa-times"></i> Priority support</li>
+                    </ul>
+                    <button class="btn-secondary" onclick="redirectToSignup()">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$9.99<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Unlimited generations</li>
+                        <li><i class="fas fa-check"></i> All premium tools</li>
+                        <li><i class="fas fa-check"></i> Faster processing</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <button class="btn-primary" onclick="redirectToSignup()">Start Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Business</h3>
+                    <div class="price">$49.99<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Unlimited everything</li>
+                        <li><i class="fas fa-check"></i> Team features</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                        <li><i class="fas fa-check"></i> Priority 24/7 support</li>
+                    </ul>
+                    <button class="btn-secondary" onclick="redirectToSignup()">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        What AI tools are available?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>We offer 50+ AI tools including writing, image generation, video creation, coding assistance, and more. All tools are designed to boost productivity.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        Is there a free plan?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>Yes! Our free plan includes 10 AI generations per day with access to basic tools. Perfect for trying out our platform.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        Can I cancel anytime?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>Absolutely! Cancel your subscription anytime without any penalties. No questions asked.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        How secure is my data?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>We use enterprise-grade encryption and follow strict data privacy policies. Your data is safe with us.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        Do you offer API access?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>Yes, API access is available on Business plans. Contact our sales team for more details.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">
+                        What payment methods do you accept?
+                        <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <p>We accept all major credit cards, PayPal, and bank transfers for Business plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Unleash Your Creativity?</h2>
+            <p>Join thousands of users who are already using AI Tools Hub</p>
+            <button class="btn-large" onclick="redirectToSignup()">Start Free Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-robot"></i> AI Tools Hub</h4>
+                    <p>Empowering creativity with AI</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Tools Hub. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
